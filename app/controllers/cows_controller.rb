@@ -6,7 +6,7 @@ class CowsController < ApplicationController
   end
 
   def show
-
+    @booking = Booking.new
   end
 
   def new
@@ -15,6 +15,7 @@ class CowsController < ApplicationController
 
   def create
     @cow = Cow.new(cows_params)
+    @cow.user = current_user
     if @cow.save
       redirect_to cow_path(@cow)
     else
@@ -29,6 +30,6 @@ class CowsController < ApplicationController
   end
 
   def cows_params
-    params.require(:cows).permit(:name, :race, :description, :address)
+    params.require(:cow).permit(:name, :race, :description, :address)
   end
 end

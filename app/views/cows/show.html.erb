@@ -5,3 +5,20 @@
 <p><%= @cow.user.email %></p>
 
 <%= link_to "Back", cows_path %>
+
+
+<div class="container">
+  <%= simple_form_for [@cow, @booking] do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :start_date %>
+      <%= f.input :number_of_days %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>
+
