@@ -14,14 +14,30 @@ class BookingsController < ApplicationController
     @booking.cow = Cow.find(params[:cow_id])
     @booking.status = "pending"
     if @booking.save
-      redirect_to cow_bookings_path(@booking.cow)
+      redirect_to user_path(@booking.user)
     else
       render "cows/show"
     end
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = "accepted"
+    if @booking.save
+      redirect_to user_path(@booking.cow.user) #page profil user @booking.cow.user pour proprio vache, sinon @booking.user = locataire
+    end
+  end
+
+  def reject
+    @booking = Booking.find(params[:id])
+    @booking.status = "declined"
+    if @booking.save
+      redirect_to user_path(@booking.cow.user) #page profil user @booking.cow.user pour proprio vache, sinon @booking.user = locataire
+    end
+  end
+
    def bookings_params
-    params.require(:booking).permit(:start_date, :number_of_days )
+    params.require(:booking).permit(:start_date, :number_of_days, :status )
   end
 
 end

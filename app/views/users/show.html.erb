@@ -1,0 +1,30 @@
+<h1>My Profile</h1>
+
+<h1><%= @user.first_name %></h1>
+<h1><%= @user.email %></h1>
+
+<h4><%= @user.email %></h4>
+<p><%= @user.email %></p>
+
+<h3>My bookings</h3>
+  <p><% @user.bookings.each do |booking| %></p>
+  <%= booking.user.email %>
+  <%= booking.start_date %>
+<% end %>
+
+
+
+<h3>My cows</h3>
+  <p><% @user.cows.each do |cow| %></p>
+  <%= cow.name  %>
+  <% cow.bookings.each do |booking| %>
+    <%= booking.start_date %>
+    <%= booking.status %>
+    <%= booking.user.email %>
+  <% end %>
+<% end %>
+
+<%= link_to "Ajouter une vache", new_cow_path %>
+
+
+<%= link_to "Update", edit_user_path(@user) %>

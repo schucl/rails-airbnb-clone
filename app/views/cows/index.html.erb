@@ -1,6 +1,7 @@
+<%= link_to "My Profile", user_path(current_user) %>
 <h1>All cows</h1>
 
-<%= link_to "Ajouter une vache", new_cow_path %>
+
 
 <% @cows.each do |cow| %>
   <h3><%= cow.name %></h3>

@@ -1,10 +1,18 @@
-<h1>My bookings</h1>
+<div class="container text-justify">
+  <h1>My bookings</h1>
 
-<% @bookings.each do |booking| %>
-  <h3><%= booking.status %><</h3>
-  <h4><%= booking.start_date %></h4>
-  <h4><%= booking.number_of_days %></h4>
-  <p><%= booking.cow.name %></p>
-  <p><%= booking.user.email %></p>
-<% end %>
+  <% @bookings.each do |booking| %>
+    <strong><p><%= booking.status %></p></strong>
+    <h4><%= booking.start_date %></h4>
+    <h4><%= booking.number_of_days %></h4>
+    <p><%= booking.cow.name %></p>
+    <p><%= booking.user.email %></p>
+    <%= link_to "Valider Reservation", accept_booking_path(booking) %>
+    <%= link_to "Decliner Reservation", reject_booking_path(booking) %>
+    <br><br>
+  <% end %>
+
+</div>
+
+
 
