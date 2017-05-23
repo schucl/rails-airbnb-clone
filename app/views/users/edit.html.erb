@@ -1,16 +1,26 @@
-<div class="container">
-  <%= simple_form_for(@user) do |f| %>
-    <%= f.error_notification %>
+<div class="container-form" style="background-image: linear-gradient(-125deg, rgba(5,101,168,0.5) 0%, rgba(0,36,61,0.4) 20%), url('<%= image_path('prairiebackground.png')%>');">
+  <div class="form-row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-login text-center">
+        <h1>Update your profile</h1>
+          <%= simple_form_for(@user) do |f| %>
+            <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :email %>
-      <%= f.input :description %>
-    </div>
+            <div class="form-inputs">
+              <div><%= f.label :first_name %></div>
+              <div><%= f.text_field :first_name, class: "form-info" %></div>
+              <div><%= f.label :last_name %></div>
+              <div><%= f.text_field :last_name, class: "form-info" %></div>
+              <div><%= f.label :email %></div>
+              <div><%= f.text_field :email, class: "form-info" %></div>
+              <div><%= f.label :description %></div>
+              <div><%= f.text_field :description, class: "form-info" %></div>
+            </div>
 
-    <div class="form-actions">
-      <%= f.button :submit %>
+            <div><%= f.submit "Update", class: "form-button" %></div>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end %>
-</div>
+  </div>
+
