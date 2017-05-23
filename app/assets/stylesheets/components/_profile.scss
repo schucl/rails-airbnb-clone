@@ -1,0 +1,130 @@
+.profile {
+  height: 30vh;
+  color: black;
+  position: relative;
+  padding: 10px;
+  background-color: #9FEED1;
+  margin-bottom: 30px;
+}
+
+.profile-user {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.profile-description {
+  position: absolute;
+  left: 100px;
+  top: 10px;
+}
+.profile-description h2 {
+  font-size: 35px;
+}
+.profile-description p {
+  font-size: 13px;
+  }
+.profile-link {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: black;
+  opacity: 0;
+}
+.profile-link:hover{
+  opacity: 0.1;
+}
+
+// updater ton profile
+.profile-update {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.btn-profile-update {
+  padding: 10px 30px;
+  margin: 10px;
+  background-color: #11CBD7;
+  border-radius: 4px;
+  color: white;
+  opacity: 0,8;
+}
+
+.btn-profile-update:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+// visualiser toutes mes vaches
+.my_cows {
+  padding: 20px;
+}
+
+.my_cow {
+  height: 200px;
+  color: black;
+  position: relative;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  background-color: white;
+}
+
+.my_cow h4 {
+  font-weight: bold;
+}
+
+.cow_booking p {
+  position: absolute;
+  top: 70px;
+}
+
+.cow_status {
+  font-weight: bold;
+  font-size: 18px;
+  color: #F60C86;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+// button pour accepter ou decliner une résa
+.btn-resa {
+  position: absolute;
+  bottom: 10px;
+}
+
+
+.btn-accept {
+  padding: 5px 20px;
+  background-color: #11CBD7;
+  border-radius: 4px;
+  color: white;
+  opacity: 0,8;
+}
+
+.btn-accept:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+
+// button pour rajouter une vache
+.btn-add-cow {
+  padding: 10px 30px;
+  margin: 10px;
+  background-color: #F60C86;
+  border-radius: 4px;
+  color: white;
+  opacity: 0,8;
+}
+
+.btn-add-cow:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
