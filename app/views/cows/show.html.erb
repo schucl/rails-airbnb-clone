@@ -1,3 +1,5 @@
+
+
 <h1><%= @cow.name %></h1>
 
 <h4><%= @cow.race %></h4>
@@ -6,6 +8,9 @@
 
 <%= link_to "Back", cows_path %>
 
+<% if @cow.photo? %>
+  <%= cl_image_tag @cow.photo.path, width: 200, height: 300, crop: :fill %>
+<% end %>
 
 <div class="container">
   <%= simple_form_for [@cow, @booking] do |f| %>

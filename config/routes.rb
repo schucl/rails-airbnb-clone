@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get    "bookings/:id/accept",      to: "bookings#accept", as: "accept_booking"
   get    "bookings/:id/reject",      to: "bookings#reject", as: "reject_booking"
   resources :users, only: [:show, :edit, :update]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  mount Attachinary::Engine => "/attachinary"
 end

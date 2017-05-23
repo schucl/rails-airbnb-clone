@@ -9,6 +9,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
+require "attachinary/orm/active_record"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
@@ -23,14 +24,14 @@ module RailsAirbnbClone
       generate.helper false
     end
 
-    # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.1
+    # # Initialize configuration defaults for originally generated Rails version.
+    # config.load_defaults 5.0.3
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    # Don't generate system test files.
-    config.generators.system_tests = nil
+    # # Don't generate system test files.
+    # config.generators.system_tests = nil
   end
 end

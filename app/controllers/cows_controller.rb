@@ -30,6 +30,6 @@ class CowsController < ApplicationController
   end
 
   def cows_params
-    params.require(:cow).permit(:name, :race, :description, :address)
+    params.require(:cow).permit(:name, :race, :description, :address, :photo)
   end
 end
