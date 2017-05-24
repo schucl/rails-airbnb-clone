@@ -12,7 +12,7 @@
               <div class="card" style="background-image: url('<%= cl_image_path cow.photo.path, height: 300, width:400, crop: fill %>')"">
                 <div class="card-description">
                   <h2><%= cow.name %></h2>
-                  <p><%= cow.race %></p>
+                    <p><%= cow.race %></p>
                 </div>
                 <%= link_to "Détail", cow_path(cow), class: 'card-link' %>
               </div>
@@ -21,9 +21,9 @@
         </div>
       </div>
       <div class="col-xs-4">
-        <div class="text-center padded features" id="map-container">
-          <h1>Emplacement de la map col-xs-4</h1>
-          <div id="map" style="width: 100%;height: 500px;">
+        <div>
+          <h3 class="text-center">Où paître?</h3>
+          <div id="map" style="width: 400px; height: 500px;">
           </div>
         </div>
       </div>
@@ -31,26 +31,59 @@
   </div>
 </div>
 
-<%= link_to "My Profile", user_path(current_user) %>
-
-
 <section class="zone-circle">
   <div class="container text-center padded features">
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <img src="images/cow.png" alt="">
-          <h4>Meet beautiful cows</h4>
-          <p>L'amour est dans le pré</p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <img src="images/farmer.png" alt="">
-          <h4>Meet farmers</h4>
-          <p>Découvre un monde nouveau</p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <img src="images/heart.png" alt="">
-          <h4>Share and love</h4>
-          <p>Rejoins la communauté qui aime le lactose.</p>
-        </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <%= image_tag "cow.svg", class: "small_image" %>
+        <h4>Meet beautiful cows</h4>
+        <p>L'amour est dans le pré</p>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <%= image_tag "farmer.svg", class: "small_image" %>
+        <h4>Meet farmers</h4>
+        <p>Découvre un monde nouveau</p>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <%= image_tag "heart.svg", class:"small_image" %>
+        <h4>Share and love</h4>
+        <p>Rejoins la communauté qui aime le lactose</p>
       </div>
     </div>
+  </div>
+</section>
+
+<% content_for(:after_js) do %>
+  <script>
+  var styles = [
+    {
+        "featureType": "poi.business",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    }
+];
+
+    $(document).ready(function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ provider: {
+          styles: styles
+          // pass in other Google Maps API options here
+          // => https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+          },
+        internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
+  </script>
+<% end %>

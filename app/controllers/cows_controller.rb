@@ -2,11 +2,17 @@ class CowsController < ApplicationController
   before_action :set_cow, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cows = Cow.all
+    @cows = Cow.where.not(latitude: nil, longitude: nil)
+    @hash = Gmaps4rails.build_markers(@cows) do |cow, marker|
+      marker.lat cow.latitude
+      marker.lng cow.longitude
+      #marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
   end
 
   def show
     @booking = Booking.new
+    @cow_coordinates = { lat: @cow.latitude, lng: @cow.longitude }
   end
 
   def new
