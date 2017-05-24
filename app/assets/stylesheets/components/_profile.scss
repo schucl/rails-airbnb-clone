@@ -63,15 +63,12 @@
 
 .my_cow {
   height: 200px;
-  color: black;
+  color: white;
   position: relative;
   margin: 20px;
   padding: 10px;
   border-radius: 4px;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  background-color: white;
+  background-size: cover;
 }
 
 .my_cow h4 {
@@ -81,6 +78,8 @@
 .cow_booking p {
   position: absolute;
   top: 70px;
+  left: 10px;
+  opacity: 1;
 }
 
 .cow_status {
@@ -110,6 +109,7 @@
 .btn-accept:hover {
   opacity: 1;
   text-decoration: none;
+  color: white;
 }
 
 
@@ -126,5 +126,6 @@
 .btn-add-cow:hover {
   opacity: 1;
   text-decoration: none;
+  color: white;
 }
 
