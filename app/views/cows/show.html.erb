@@ -37,7 +37,6 @@
 
       <div class="row" class="map-container">
         <div class="text-center" id="map-container">
-          <p>Emplacement de la map col-xs-4 kjdfkqdfjglfglsdgkdl </p>
           <div id="map" style="width: 100%;height: 500px;">
           </div>
         </div>
@@ -71,7 +70,6 @@
   <%= javascript_tag do %>
     $(document).ready(function() {
       var coord = <%= raw @cow_coordinates.to_json %>;
-      alert('Cow coordinates are ' + coord.lat + ', ' + coord.lng);
     });
   <% end %>
 <% end %>
