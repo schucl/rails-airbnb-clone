@@ -1,7 +1,7 @@
 
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+  <%= link_to cows_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png" %>
   <% end %>
     <!-- Search form -->
@@ -27,7 +27,9 @@
     <% else %>
 
       <!-- Login text link -->
+      <div id= "navbar-links-login">
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      </div>
     <% end %>
 
 </div>
