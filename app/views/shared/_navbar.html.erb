@@ -21,6 +21,7 @@
     <!-- Text link Profile and Log-out -->
 
       <div id="navbar-links">
+      <%= link_to "Cows", cows_path %>
       <%= link_to "Profile", user_path(current_user) %>
       <%= link_to "Log-out", destroy_user_session_path, method: :delete %>
       </div>
