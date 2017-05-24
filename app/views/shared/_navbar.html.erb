@@ -1,7 +1,7 @@
 
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+  <%= link_to cows_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png" %>
   <% end %>
     <!-- Search form -->
@@ -21,13 +21,16 @@
     <!-- Text link Profile and Log-out -->
 
       <div id="navbar-links">
+      <%= link_to "Cows", cows_path %>
       <%= link_to "Profile", user_path(current_user) %>
       <%= link_to "Log-out", destroy_user_session_path, method: :delete %>
       </div>
     <% else %>
 
       <!-- Login text link -->
+      <div id= "navbar-links-login">
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      </div>
     <% end %>
 
 </div>
