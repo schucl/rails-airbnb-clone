@@ -3,10 +3,17 @@ class CowsController < ApplicationController
 
   def index
     @cows = Cow.all
+    @cows = Cow.where.not(latitude: nil, longitude: nil)
+    raise
+    @hash = Gmaps4rails.build_markers(@flats) do |cow, marker|
+      marker.lat cow.latitude
+      marker.lng cow.longitude
+    end
   end
 
   def show
     @booking = Booking.new
+    @cow_coordinates = { lat: @cow.latitude, lng: @cow.longitude }
   end
 
   def new
