@@ -12,7 +12,7 @@
               <div class="card" style="background-image: url('<%= cl_image_path cow.photo.path, height: 300, width: 400, crop: :fill %>')"">
                 <div class="card-description">
                   <h2><%= cow.name %></h2>
-                  <p><%= cow.race %></p>
+                    <p><%= cow.race %></p>
                 </div>
                 <%= link_to "Détail", cow_path(cow), class: 'card-link' %>
               </div>
