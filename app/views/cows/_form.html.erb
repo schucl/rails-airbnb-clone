@@ -1,18 +1,26 @@
-<div class="container">
-  <%= simple_form_for(@cow) do |f| %>
-    <%= f.error_notification %>
+<div class="container-form" style="background-image: linear-gradient(-125deg, rgba(5,101,168,0.5) 0%, rgba(0,36,61,0.4) 20%), url('<%= image_path('prairiebackground.png')%>');">
+  <div class="form-row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-login text-center">
+        <h1>Votre nouvelle vache à louer</h1>
+        <%= simple_form_for(@cow) do |f| %>
+          <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :race %>
-      <%= f.input :description %>
-    </div>
+          <div class="form-inputs">
+            <%= f.input :name, class: "form-info" %>
+            <%= f.input :race, class: "form-info" %>
+            <%= f.input :address, class: "form-info" %>
+            <%= f.input :description, class: "form-info" %>
+          </div>
 
-    <div class="form-actions">
-      <%= f.button :submit %>
+          <div><%= f.submit "Ajouter votre vache", class: "form-button" %></div>
+          <%= link_to "Back", cows_path %>
+        <% end %>
+      </div>
     </div>
   <div>
     <%= f.input :photo, as: :attachinary %>
   </div>
   <% end %>
 </div>
+
