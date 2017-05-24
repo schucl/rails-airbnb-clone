@@ -3,6 +3,11 @@ class CowsController < ApplicationController
 
   def index
     @cows = Cow.all
+    @hash = Gmaps4rails.build_markers(@cows) do |cow, marker|
+      marker.lat cow.latitude
+      marker.lng cow.longitude
+    end
+      #marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
   end
 
   def show
