@@ -5,12 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
+# User.destroy_all
 Booking.destroy_all
 Cow.destroy_all
 
-user1 = User.create(first_name: "Georges", last_name: "Clooney", email: "georges@clooney.com", description: "Anciennement acteur et réalisateur, je suis devenu célèbre grâce à mon rôle du docteur Doug Ross dans la série télévisée Urgences. Depuis, j’ai mené une importante carrière au cinema à travers Ocean’s Eleven, Confessions d’un homme dangereux, Good Night and Good Luck et Syriana. J’ai décidé de me reconvertir dans la production laitière. J’ai donc à ma disposition plusieurs vaches et je souhaiterai faire partager des expériences champêtres à des personnes qui le souhaitent.")
-user2 = User.create(first_name: "Scarlett", last_name: "Johansson", email: "scarlett@johansson.com", description: "Attristée par ma récente rupture, je suis à la recherche d’une vache afin de passer de bon moment en sa compagnie dans la prairie et d’oublier mon chagrin.")
+# user1 = User.create(first_name: "Georges", last_name: "Clooney", email: "georges@clooney.com", description: "Anciennement acteur et réalisateur, je suis devenu célèbre grâce à mon rôle du docteur Doug Ross dans la série télévisée Urgences. Depuis, j’ai mené une importante carrière au cinema à travers Ocean’s Eleven, Confessions d’un homme dangereux, Good Night and Good Luck et Syriana. J’ai décidé de me reconvertir dans la production laitière. J’ai donc à ma disposition plusieurs vaches et je souhaiterai faire partager des expériences champêtres à des personnes qui le souhaitent.")
+# user2 = User.create(first_name: "Scarlett", last_name: "Johansson", email: "scarlett@johansson.com", description: "Attristée par ma récente rupture, je suis à la recherche d’une vache afin de passer de bon moment en sa compagnie dans la prairie et d’oublier mon chagrin.")
 
 
 cow1 = Cow.create(name: "Marguerite", address: "Ile de Jersey", description: "La Jersiaise se distingue par son petit format, son squelette particulièrement fin et une forme de tête caractéristique. Elle produit un lait au taux protéique élevé, la plaçant en tête de toutes les races laitières sur ce critère.
