@@ -20,7 +20,7 @@
       <div class="row">
         <% @user.bookings.each do |booking| %>
         <div class="col-xs-12 col-sm-4">
-          <div class="my_cow" style="background-image: url('<%= cl_image_path booking.cow.photo.path %>')">
+          <div class="my_cow" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%), url('<%= cl_image_path booking.cow.photo.path %>')">
             <h4><%= booking.cow.name %></h4>
             <div class="cow_booking">
               <div class="cow_status"><%= booking.status %></div>
@@ -54,7 +54,7 @@
               <% else %>
                 <% cow.bookings.each do |booking| %>
                   <div class="cow_status"><%= booking.status %></div>
-                  <p><strong><%= booking.user.first_name %></strong> a demandé une réservation pour <%= booking.number_of_days %> jours avec <%= cow.name %> à partir du <%= booking.start_date %></p>
+                  <p>Vous avez une réservation pour <%= booking.number_of_days %> jours avec <%= cow.name %> à partir du <%= booking.start_date %></p>
                   <div class="btn-resa">
                     <%= link_to "Valider Reservation", accept_booking_path(booking), class: "btn-accept" %>
                     <%= link_to "Decliner Reservation", reject_booking_path(booking), class: "btn-accept" %>
