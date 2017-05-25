@@ -6,4 +6,10 @@
 //= require attachinary
 //= require underscore
 //= require gmaps/google
+//= require bootstrap-datepicker
 //= require_tree .
+
+$('#booking_start_date').datepicker({
+  format: 'dd/mm/yyyy',
+  language: 'fr'
+});
