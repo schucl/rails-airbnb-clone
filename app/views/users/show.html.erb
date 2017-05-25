@@ -9,6 +9,39 @@
 </div>
 
 
+<div class="container">
+  <div class="card">
+    <div class="row">
+      <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+        <div class="profile-claire">
+
+          <div class="profile-picture">
+           <img class="card-user avatar-claire" src="http://placehold.it/100x100">
+          </div>
+          <div class="profile-name">
+            <%= @user.first_name %> <%= @user.last_name %>
+          </div>
+          <div class="metrics">
+            <p><%= @user.cows.count %></p>
+            <p><%= @user.bookings.count %></p>
+
+          </div>
+          <div class="description">
+            <%= @user.description %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
 <% if @user.bookings.empty? %>
   <div class="my_bookings text-center">
     <%= image_tag "vachetriste.png", {class: "img-circle", style: "height: 100px"}%>
