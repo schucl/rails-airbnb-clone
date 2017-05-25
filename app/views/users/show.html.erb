@@ -37,39 +37,53 @@
 
 <% if @user.cows.empty? %>
   <div class="my_cows text-center">
-    <p>Vous n'avez aucune vache en location</p>
+      <p>Vous n'avez aucune vache en location</p>
     <br>
     <%= link_to "Ajouter une vache", new_cow_path, class: "btn-add-cow" %>
-  <% else %>
-    <h3>My cows</h3>
-    <div class="row">
-      <p><% @user.cows.each do |cow| %></p>
-      <div class="col-xs-12 col-sm-4">
-        <div class="my_cow" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%), url('<%= cl_image_path cow.photo.path %>')">
+  </div>
 
-            <h4><%= cow.name %></h4>
-            <div class="cow_booking">
-              <% if cow.bookings.empty? %>
-                <p>Aucune réservation n'a été faite pour l'instant</p>
-              <% else %>
-                <% cow.bookings.each do |booking| %>
-                  <div class="cow_status"><%= booking.status %></div>
-                  <p>Vous avez une réservation pour <%= booking.number_of_days %> jours avec <%= cow.name %> à partir du <%= booking.start_date %></p>
-                  <div class="btn-resa">
-                    <%= link_to "Valider Reservation", accept_booking_path(booking), class: "btn-accept" %>
-                    <%= link_to "Decliner Reservation", reject_booking_path(booking), class: "btn-accept" %>
-                  </div>
+<% else %>
+    <div class="my_cows text-center">
+      <h3>My cows</h3>
+      <% @user.cows.each do |cow| %>
+        <div class="row">
+          <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+            <div class="container_cows">
+              <div class="my_cow" style="background-image: url('<%= cl_image_path cow.photo.path %>')">
+                <h4><%= cow.name %></h4>
+              </div>
+
+              <div class="cow_booking">
+                <% if cow.bookings.empty? %>
+                  <p>Aucune réservation n'a été faite pour l'instant</p>
+                <% else %>
+                  <% cow.bookings.each do |booking| %>
+                    <ul>
+                      <li><strong><%= booking.status %></strong>: <%= booking.user.first_name %> a fait une réservation pour <%= booking.number_of_days %> jours à partir du <%= booking.start_date %></li>
+                      <div class="btn-resa">
+                        <%= link_to "Valider", accept_booking_path(booking), class: "btn-accept" %>
+                        <%= link_to "Decliner", reject_booking_path(booking), class: "btn-accept" %>
+                      </div>
+                    </ul>
+                  <% end %>
                 <% end %>
-              <% end %>
+
+              </div>
+
             </div>
 
+
+
+
+          </div>
+
         </div>
-      </div>
       <% end %>
+      <br>
+      <%= link_to "Ajouter une vache", new_cow_path, class: "btn-add-cow" %>
     </div>
-    </div>
-    <br>
-    <%= link_to "Ajouter une vache", new_cow_path, class: "btn-add-cow" %>
+
+
   </div>
 <% end %>
 
