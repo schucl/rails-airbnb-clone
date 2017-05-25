@@ -23,10 +23,9 @@
         </div>
       </div>
       <div class="col-xs-4">
-        <div>
+        <div class="test">
           <h3 class="text-center">Où paître?</h3>
-          <div id="map" style="width: 400px; height: 500px;">
-          </div>
+          <div id="map" style="width: 400px; height: 500px;"></div>
         </div>
       </div>
     </div>
@@ -48,7 +47,7 @@
 ];
 
     $(document).ready(function() {
-      var handler = Gmaps.build('Google');
+      var handler = Gmaps.build('Google')
       handler.buildMap({ provider: {
           styles: styles
           // pass in other Google Maps API options here
