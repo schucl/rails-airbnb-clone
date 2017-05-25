@@ -32,20 +32,11 @@ ActiveRecord::Schema.define(version: 20170525120235) do
   end
 
   create_table "bookings", force: :cascade do |t|
-<<<<<<< HEAD
-    t.integer  "number_of_days"
-    t.string   "status"
-    t.integer  "cow_id"
-    t.integer  "user_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-=======
     t.string   "status"
     t.integer  "cow_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
->>>>>>> 8c4cccb9b770c3dcb29b7e6596109573e797c991
     t.date     "start_date"
     t.date     "end_date"
     t.index ["cow_id"], name: "index_bookings_on_cow_id", using: :btree
