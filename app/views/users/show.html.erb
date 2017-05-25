@@ -1,38 +1,42 @@
-<div class="profile">
-  <div class="profile-description">
-    <h2>Bienvenue <%= @user.first_name %> <%= @user.last_name %>!</h2>
-    <h4><%= @user.description %></h4>
-  </div>
-  <div class="profile-update">
-    <%= link_to "Update", edit_user_path(@user), class: "btn-profile-update" %>
-  </div>
-</div>
-
-
 <div class="container">
-  <div class="card" id="profile">
-    <div class="row">
-      <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-        <div class="profile-claire">
+  <div class="row">
+    <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+      <div id="profile-claire">
 
-          <div class="profile-picture">
-           <img class="card-user avatar-claire" src="http://placehold.it/100x100">
-          </div>
-          <div class="profile-name">
-            <%= @user.first_name %> <%= @user.last_name %>
-          </div>
-          <div class="metrics">
-            <p><%= @user.cows.count %></p>
-            <p><%= @user.bookings.count %></p>
+        <div id="profile-picture">
+         <img id="avatar-claire" src="http://placehold.it/100x100">
+        </div>
 
-          </div>
-          <div class="description">
-            <%= @user.description %>
-          </div>
+        <div id="profile-name" class="text-center">
+          <%= @user.first_name %> <%= @user.last_name %>
+        </div>
+
+        <div id="metrics">
+         <div id="metrics-cow">
+          <%= image_tag "cow_icon.png", {class: "img-circle", style: "height: 30px"} %>
+          <p><%= @user.cows.count %> cows</p>
+        </div>
+
+        <div id="metrics-bookings">
+          <%= image_tag "farm_icon.png", {class: "img-circle", style: "height: 30px"}  %>
+
+          <p><%= @user.bookings.count %> bookings</p>
         </div>
       </div>
+
+      <div id="description">
+        <p>
+        <%= @user.description %>
+        </p>
+      </div>
+
+      <div id="update-profile">
+        <%= link_to "Modifier", edit_user_path(@user), class: "link-right" %>
+      </div>
+
     </div>
   </div>
+</div>
 </div>
 
 
