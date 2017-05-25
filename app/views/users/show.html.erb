@@ -15,18 +15,28 @@
     <p>Vous n'avez fait aucune réservation</p>
   </div>
   <% else %>
-    <div class="my_bookings text-center">
-      <h3>My bookings</h3>
+    <div class="my_bookings text-center" style="background-color: #F6F6F6">
+      <h2>My bookings</h2>
       <div class="row">
         <% @user.bookings.each do |booking| %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="my_cow" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%), url('<%= cl_image_path booking.cow.photo.path %>')">
-            <h4><%= booking.cow.name %></h4>
+        <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+          <div class="container_cows">
+            <div class="my_cow" style="background-image: url('<%= cl_image_path booking.cow.photo.path %>')">
+              <h4><%= booking.cow.name %></h4>
+              <% if booking.status == "pending" %>
+                <div class="badge badge-orange"><i class="fa fa-question" aria-hidden="true"></i></div>
+              <% elsif booking.status == "accepted" %>
+                <div class="badge badge-green"><i class="fa fa-check" aria-hidden="true"></i></div>
+              <% elsif booking.status == "declined" %>
+                <div class="badge badge-red"><i class="fa fa-times" aria-hidden="true"></i></div>
+              <% end %>
+            </div>
+
             <div class="cow_booking">
-              <div class="cow_status"><%= booking.status %></div>
-              <p>Vous avez réservé <strong><%= booking.cow.name %></strong> à partir du <%= booking.start_date %> pour <%= booking.number_of_days %> jours.</p>
+              <p>Vous avez réservé <strong><%= booking.cow.name %></strong> à partir du <%= booking.start_date.to_formatted_s(:long) %> pour <%= booking.number_of_days %> jours.</p>
             </div>
           </div>
+
         </div>
         <% end %>
       </div>
@@ -43,8 +53,8 @@
   </div>
 
 <% else %>
-    <div class="my_cows text-center">
-      <h3>My cows</h3>
+    <div class="my_bookings text-center">
+      <h2>My cows</h2>
       <% @user.cows.each do |cow| %>
         <div class="row">
           <div class="col-xs-12 col-lg-10 col-lg-offset-1">
@@ -57,32 +67,32 @@
                 <% if cow.bookings.empty? %>
                   <p>Aucune réservation n'a été faite pour l'instant</p>
                 <% else %>
-                  <% cow.bookings.each do |booking| %>
-                    <ul>
-                      <li><strong><%= booking.status %></strong>: <%= booking.user.first_name %> a fait une réservation pour <%= booking.number_of_days %> jours à partir du <%= booking.start_date %></li>
-                      <div class="btn-resa">
-                        <%= link_to "Valider", accept_booking_path(booking), class: "btn-accept" %>
-                        <%= link_to "Decliner", reject_booking_path(booking), class: "btn-accept" %>
-                      </div>
-                    </ul>
-                  <% end %>
+                  <ul>
+                    <% cow.bookings.each do |booking| %>
+                      <li><strong><%= booking.status.upcase %></strong> <%= booking.user.first_name %> a fait une réservation pour <%= booking.number_of_days %> jours à partir du <%= booking.start_date.to_formatted_s(:long) %>
+                        <div class="btn-resa">
+                          <%= link_to accept_booking_path(booking), class: "btn-accept" do %>
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                          <% end %>
+                          <%= link_to reject_booking_path(booking), class: "btn-decline" do %>
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                          <% end %>
+                        </div>
+                      </li>
+                    <% end %>
+                  </ul>
                 <% end %>
 
               </div>
-
             </div>
-
-
-
-
           </div>
 
         </div>
       <% end %>
       <br>
+      <br>
       <%= link_to "Ajouter une vache", new_cow_path, class: "btn-add-cow" %>
     </div>
-
 
   </div>
 <% end %>
