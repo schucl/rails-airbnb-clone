@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20170525120235) do
     t.string   "resource_type"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "my_index", unique: true, using: :btree
     t.index ["attachinariable_type", "attachinariable_id"], name: "index_my_shorter_name", using: :btree
   end
 
