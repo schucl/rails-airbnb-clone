@@ -1,76 +1,85 @@
 
 <div class="padded">
+
   <div class="container media">
+
     <div class="row" class="media-body">
       <div class="col-xs-8 col-sm-8">
         <div class="row">
           <% if @cow.photo? %>
-          <div class="cow-photo">
-            <%= cl_image_tag @cow.photo.path %>
-          </div>
+            <div class="cow-photo">
+              <%= cl_image_tag @cow.photo.path %>
+            </div>
           <% end %>
           <div class="cow-name">
             <h2><%= @cow.name %></h4>
+          </div>
+          <h4><%= @cow.race %></h4>
+          <p><%= @cow.description %></p>
+          <p><%= @cow.address %></p>
+          <%= link_to "Back", cows_path %>
+        </div>
+      </div>
+
+      <div class="col-xs-4 col-sm-4 card-right">
+        <div class="card-top">
+          <h4 style ="color: white"><%= @cow.price %>€ par jour</h4>
+        </div>
+        <div class="card-form">
+          <div class="text-center " id="form-container">
+            <%= simple_form_for [@cow, @booking] do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.input :start_date, as: :string %>
+              <%= f.input :end_date, as: :string %>
             </div>
-            <h4><%= @cow.race %></h4>
-            <p><%= @cow.description %></p>
-            <p><%= @cow.address %></p>
-            <%= link_to "Back", cows_path %>
+            <div>
+              <%= f.button :submit, class: "form-actions btn-book" %>
+            </div>
+            <% end %>
           </div>
         </div>
-
-        <div class="col-xs-4">
-          <div class="row">
-            <div class="text-center padded features" id="form-container">
-              <%= simple_form_for [@cow, @booking] do |f| %>
-              <%= f.error_notification %>
-              <div class="form-inputs">
-                <%= f.input :start_date, as: :string %>
-                <%= f.input :end_date, as: :string %>
-              </div>
-              <div class="form-actions">
-                <%= f.button :submit %>
-              </div>
-              <% end %>
-            </div>
-            <div class="col-xs-12">
-             <div class="media-section text-center">
-              <h4>Share Link</h4>
-              <div class="share-links">
-                <a href="#" class="share-link bg-facebook">
-                  <i class="fa fa-facebook"></i>
-                </a>
-                <a href="#" class="share-link bg-twitter">
-                  <i class="fa fa-twitter"></i>
-                </a>
-                <a href="#" class="share-link bg-email">
-                  <i class="fa fa-envelope-o"></i>
-                </a>
-                <a href="#" class="share-link bg-text">
-                  <i class="fa fa-mobile"></i>
-                </a>
-              </div>
-            </div>
-            <div class="row" class="map-container">
-              <div class="text-center" id="map-container">
-                <div id="map" style="width: 100%;height: 500px;">
-                </div>
-              </div>
-            </div>
+        <div id="map" style="width: 362px; height: 400px; margin-top: 10px; margin-bottom: 10px"></div>
+        <div class="card-links">
+          <div class="share-links text center">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-mobile"></i>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-</div>
 
 <% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).ready(function() {
-      var coord = <%= raw @cow_coordinates.to_json %>;
+  <script>
+  $(document).ready(function() {
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: { id: 'map' } }, function() {
+      provider: {
+        scrollwheel :false
+      }
+      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      if (markers.length == 0) {
+        handler.getMap().setZoom(2);
+      } else if (markers.length == 1) {
+        handler.getMap().setZoom(14);
+      }
     });
-  <% end %>
+  })
+</script>
 <% end %>
 
 

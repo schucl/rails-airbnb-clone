@@ -13,7 +13,11 @@ class CowsController < ApplicationController
 
   def show
     @booking = Booking.new
-    @cow_coordinates = { lat: @cow.latitude, lng: @cow.longitude }
+    @hash = Gmaps4rails.build_markers(@cow) do |cow, marker|
+      marker.lat cow.latitude
+      marker.lng cow.longitude
+      marker.infowindow render_to_string(partial: "pages/cow_map_box", locals: { cow: cow })
+    end
   end
 
   def new
