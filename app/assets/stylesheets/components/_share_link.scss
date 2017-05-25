@@ -1,10 +1,10 @@
 .share-links {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding: 10px;
 }
 .share-link {
-  flex: 0 0 20%;
+  flex: 0 0 18%;
   color: white;
   font-size: 18px;
   padding: 4px 0;

@@ -24,7 +24,7 @@
             <h4><%= booking.cow.name %></h4>
             <div class="cow_booking">
               <div class="cow_status"><%= booking.status %></div>
-              <p>Vous avez réservé <strong><%= booking.cow.name %></strong> à partir du <%= booking.start_date %> pour <%= booking.number_of_days %> jours.</p>
+              <p>Vous avez réservé <strong><%= booking.cow.name %></strong> à partir du <%= booking.start_date %> pour <%= booking.end_date %> jours.</p>
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@
                 <% else %>
                   <% cow.bookings.each do |booking| %>
                     <ul>
-                      <li><strong><%= booking.status %></strong>: <%= booking.user.first_name %> a fait une réservation pour <%= booking.number_of_days %> jours à partir du <%= booking.start_date %></li>
+                      <li><strong><%= booking.status %></strong>: <%= booking.user.first_name %> a fait une réservation pour <%= booking.end_date %> jours à partir du <%= booking.start_date %></li>
                       <div class="btn-resa">
                         <%= link_to "Valider", accept_booking_path(booking), class: "btn-accept" %>
                         <%= link_to "Decliner", reject_booking_path(booking), class: "btn-accept" %>
