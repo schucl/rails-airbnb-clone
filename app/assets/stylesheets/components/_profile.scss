@@ -61,49 +61,59 @@
   padding: 20px;
 }
 
+.container_cows {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .my_cow {
-  height: 200px;
+  flex: 0 1 auto;
+  align-self: top;
+  height: 175px;
+  width: 350px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
   color: white;
   position: relative;
-  margin: 20px;
+  margin: 10px;
+  border-radius: 20px;
   padding: 10px;
-  border-radius: 4px;
-  background-size: cover;
 }
 
 .my_cow h4 {
   font-weight: bold;
-}
-
-.cow_booking p {
   position: absolute;
-  top: 70px;
+  bottom: 10px;
   left: 10px;
-  opacity: 1;
 }
 
-.cow_status {
-  font-weight: bold;
-  font-size: 18px;
-  color: #F60C86;
-  position: absolute;
-  top: 10px;
-  right: 10px;
+// texte à droite avec les résa
+
+.cow_booking {
+  width: 900px;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-self: top;
 }
 
 // button pour accepter ou decliner une résa
 .btn-resa {
-  position: absolute;
-  bottom: 10px;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-self: top;
 }
 
-
 .btn-accept {
-  padding: 5px 20px;
+  padding: 5px 15px;
   background-color: #11CBD7;
   border-radius: 4px;
   color: white;
   opacity: 0,8;
+  margin: 10px;
 }
 
 .btn-accept:hover {
