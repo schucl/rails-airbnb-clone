@@ -3,10 +3,11 @@ class CowsController < ApplicationController
 
   def index
     @cows = Cow.where.not(latitude: nil, longitude: nil)
+    @cows_near = Cow.near(@address, 1)
     @hash = Gmaps4rails.build_markers(@cows) do |cow, marker|
       marker.lat cow.latitude
       marker.lng cow.longitude
-      #marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+      marker.infowindow render_to_string(partial: "pages/cow_map_box", locals: { cow: cow })
     end
   end
 

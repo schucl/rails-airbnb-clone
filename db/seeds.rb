@@ -31,3 +31,9 @@ cow5.photo_url = "http://www.petakids.com/wp-content/uploads/2015/11/Mom-cow-and
 
 cow6 = Cow.create(name: "Muriel", address: "Limoges", description: "La limousine est une race bovine française rustique originaire du Limousin, qui est principalement vouée à la production de viande. Elle est aujourd'hui la seconde race bovine allaitante française en terme d'effectif avec environ 900 000 vaches reproductrices. La limousine est une vache de couleur froment vif, plus claire sous le ventre et autour des yeux et du mufle, avec des muqueuses rose clair. ", race: "Limousine", user: User.first)
 cow6.photo_url = "http://www.lavignecoise.com/wp-content/uploads/2014/03/Pyrenees-65-elevage-la-Ferme-Vignecoise-transhumance-pastoralisme2.jpg"
+
+cow7 = Cow.create(name: "Malvina", address: "Gerardmer", description: "La race Brune, originaire de Suisse et élevée aujourd’hui sur les cinq continents, a été introduite en France au XIXe siècle. Aujourd'hui, elle occupe une place de choix parmi les races laitières à haut potentiel. Son lait riche en protéines constitue une matière première intéressante pour la fabrication de fromages de qualité.", race: "Brune", user: User.first)
+cow7.photo_url = "http://www.thatsfarming.com/uploads/news/1200x800_8-208a347d63693d952b7c8a3b7338ac58/603-Bos-taurus-taurus-looking.jpg"
+
+cow8 = Cow.create(name: "Melodie", address: "Auch", description: "La limousine est une race bovine française rustique originaire du Limousin, qui est principalement vouée à la production de viande. Elle est aujourd'hui la seconde race bovine allaitante française en terme d'effectif avec environ 900 000 vaches reproductrices. La limousine est une vache de couleur froment vif, plus claire sous le ventre et autour des yeux et du mufle, avec des muqueuses rose clair. ", race: "Limousine", user: User.first)
+cow8.photo_url = "http://www.vache-limousine.com/public/nouvelles/DSCF0121.JPG"

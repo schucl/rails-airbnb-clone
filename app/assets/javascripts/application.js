@@ -13,3 +13,9 @@ $('#booking_start_date').datepicker({
   format: 'dd/mm/yyyy',
   language: 'fr'
 });
+
+
+$('#booking_end_date').datepicker({
+  format: 'dd/mm/yyyy',
+  language: 'fr'
+});
