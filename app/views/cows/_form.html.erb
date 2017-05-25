@@ -7,10 +7,10 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :name, class: "form-info" %>
-            <%= f.input :race, class: "form-info" %>
-            <%= f.input :address, class: "form-info" %>
-            <%= f.input :description, class: "form-info" %>
+            <%= f.input :name, placeholder: "Your cow's name", label: false %>
+            <%= f.input :race, placeholder: "Your cow's race", label: false %>
+            <%= f.input :address, input_html: { class: "address-autocomplete" }, label: false %>
+            <%= f.input :description, placeholder: "Share a brief description about your cow", label: false %>
             <%= f.input :photo, as: :attachinary %>
           </div>
 
@@ -22,5 +22,3 @@
     </div>
   </div>
 </div>
-
-
