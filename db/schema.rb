@@ -31,10 +31,10 @@ ActiveRecord::Schema.define(version: 20170525120235) do
     t.index ["attachinariable_type", "attachinariable_id"], name: "index_my_shorter_name", using: :btree
   end
 
-  create_table "bookings", id: :bigserial, force: :cascade do |t|
+  create_table "bookings", force: :cascade do |t|
     t.string   "status"
-    t.bigint   "cow_id"
-    t.bigint   "user_id"
+    t.integer  "cow_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date     "start_date"
@@ -43,12 +43,12 @@ ActiveRecord::Schema.define(version: 20170525120235) do
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
 
-  create_table "cows", id: :bigserial, force: :cascade do |t|
+  create_table "cows", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
     t.text     "description"
     t.string   "race"
-    t.bigint   "user_id"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.float    "latitude"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20170525120235) do
     t.index ["user_id"], name: "index_cows_on_user_id", using: :btree
   end
 
-  create_table "users", id: :bigserial, force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

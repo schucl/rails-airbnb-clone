@@ -4,7 +4,7 @@
   <% @bookings.each do |booking| %>
     <strong><p><%= booking.status %></p></strong>
     <h4><%= booking.start_date %></h4>
-    <h4><%= booking.number_of_days %></h4>
+    <h4><%= booking.end_date %></h4>
     <p><%= booking.cow.name %></p>
     <p><%= booking.user.email %></p>
     <%= link_to "Valider Reservation", accept_booking_path(booking) %>
