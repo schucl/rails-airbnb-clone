@@ -1,0 +1,141 @@
+.profile {
+  height: 30vh;
+  color: black;
+  position: relative;
+  padding: 10px;
+  background-color: #9FEED1;
+  margin-bottom: 30px;
+}
+
+.profile-user {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.profile-description {
+  position: absolute;
+  left: 100px;
+  top: 10px;
+}
+.profile-description h2 {
+  font-size: 35px;
+}
+.profile-description p {
+  font-size: 13px;
+  }
+.profile-link {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: black;
+  opacity: 0;
+}
+.profile-link:hover{
+  opacity: 0.1;
+}
+
+// updater ton profile
+.profile-update {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.btn-profile-update {
+  padding: 10px 30px;
+  margin: 10px;
+  background-color: #11CBD7;
+  border-radius: 4px;
+  color: white;
+  opacity: 0,8;
+}
+
+.btn-profile-update:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+// visualiser toutes mes vaches
+.my_cows {
+  padding: 20px;
+}
+
+.container_cows {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my_cow {
+  flex: 0 1 auto;
+  align-self: top;
+  height: 175px;
+  width: 350px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.my_cow h4 {
+  font-weight: bold;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+// texte à droite avec les résa
+
+.cow_booking {
+  width: 900px;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-self: top;
+}
+
+// button pour accepter ou decliner une résa
+.btn-resa {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-self: top;
+}
+
+.btn-accept {
+  padding: 5px 15px;
+  background-color: #11CBD7;
+  border-radius: 4px;
+  color: white;
+  opacity: 0,8;
+  margin: 10px;
+}
+
+.btn-accept:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+}
+
+
+// button pour rajouter une vache
+.btn-add-cow {
+  padding: 10px 30px;
+  margin: 10px;
+  background-color: #F60C86;
+  border-radius: 4px;
+  color: white;
+  opacity: 0,8;
+}
+
+.btn-add-cow:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+}
+
