@@ -1,0 +1,115 @@
+// visualiser toutes mes vaches
+.my_bookings {
+  padding: 20px;
+}
+
+.container_cows {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my_cow {
+  align-self: top;
+  height: 175px;
+  width: 350px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.my_cow h4 {
+  font-weight: bold;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+// texte à droite avec les résa
+
+.cow_booking {
+  width: 900px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-self: top;
+}
+
+.cow_booking li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// button pour accepter ou decliner une résa
+.btn-resa {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.btn-accept {
+  opacity: 0,8;
+  color: white;
+  height: 45px;
+  width: 45px;
+  background-color: #32B796;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  font-size: 30px;
+  margin: 5px;
+}
+
+.btn-decline {
+  opacity: 0,8;
+  color: white;
+  height: 45px;
+  width: 45px;
+  background-color: #EE5F5B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  font-size: 30px;
+  margin: 5px;
+}
+
+.btn-accept:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+}
+
+
+.btn-decline:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+}
+
+// button pour rajouter une vache
+.btn-add-cow {
+  padding: 10px 30px;
+  background-color: #F60C86;
+  border-radius: 4px;
+  color: white;
+  opacity: 0,8;
+}
+
+.btn-add-cow:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+}
+
