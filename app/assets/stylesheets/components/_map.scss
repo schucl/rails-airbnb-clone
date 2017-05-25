@@ -1,3 +1,12 @@
 #map {
   z-index: 1000;
 }
+
+.position-fixed {
+  position: fixed;
+  z-index: 100000;
+}
+
+.test {
+  position: fixed !important;
+}
