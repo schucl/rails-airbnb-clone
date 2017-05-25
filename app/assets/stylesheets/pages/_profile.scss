@@ -1,0 +1,56 @@
+.profile {
+  height: 30vh;
+  color: black;
+  position: relative;
+  padding: 10px;
+  background-color: #9FEED1;
+}
+
+.profile-user {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.profile-description {
+  position: absolute;
+  left: 100px;
+  top: 10px;
+}
+.profile-description h2 {
+  font-size: 35px;
+}
+.profile-description p {
+  font-size: 13px;
+  }
+.profile-link {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: black;
+  opacity: 0;
+}
+.profile-link:hover{
+  opacity: 0.1;
+}
+
+// updater ton profile
+.profile-update {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.btn-profile-update {
+  padding: 10px 30px;
+  margin: 10px;
+  background-color: #11CBD7;
+  border-radius: 4px;
+  color: white;
+  opacity: 0,8;
+}
+
+.btn-profile-update:hover {
+  opacity: 1;
+  text-decoration: none;
+}

@@ -6,7 +6,7 @@
   <% end %>
     <!-- Search form -->
     <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Look for a cow">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Chercher une vache">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
@@ -21,15 +21,15 @@
     <!-- Text link Profile and Log-out -->
 
       <div id="navbar-links">
-      <%= link_to "Cows", cows_path %>
-      <%= link_to "Profile", user_path(current_user) %>
-      <%= link_to "Log-out", destroy_user_session_path, method: :delete %>
+      <%= link_to "Faire une réservation", cows_path %>
+      <%= link_to "Profil", user_path(current_user) %>
+      <%= link_to "Déconnexion", destroy_user_session_path, method: :delete %>
       </div>
     <% else %>
 
       <!-- Login text link -->
       <div id= "navbar-links-login">
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
       </div>
     <% end %>
 
