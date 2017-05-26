@@ -1,43 +1,16 @@
-
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-      <div id="profile-claire">
 
-        <div id="profile-picture">
-         <img id="avatar-claire" src="http://placehold.it/100x100">
-       </div>
-
-       <div id="profile-name" class="text-center">
-        <%= @user.first_name %> <%= @user.last_name %>
-      </div>
-
-      <div id="metrics">
-       <div id="metrics-cow">
-        <%= image_tag "cow_icon.png", {class: "img-circle", style: "height: 30px"} %>
-        <p><%= @user.cows.count %> cows</p>
-      </div>
-
-      <div id="metrics-bookings">
-        <%= image_tag "farm_icon.png", {class: "img-circle", style: "height: 30px"}  %>
-
-        <p><%= @user.bookings.count %> bookings</p>
-      </div>
     </div>
-
-    <div id="description">
-      <p>
-        <%= @user.description %>
-      </p>
-    </div>
-
-    <div id="update-profile">
-      <%= link_to "Modifier", edit_user_path(@user), class: "link-right" %>
-    </div>
+  </div>
 </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <% if @user.bookings.empty? %>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <% if @user.bookings.empty? %>
         <div class="my_bookings text-center">
           <%= image_tag "vachetriste.png", {class: "img-circle", style: "height: 100px"}%>
           <p>Vous n'avez fait aucune réservation</p>
@@ -65,14 +38,11 @@
                   <p>Vous avez réservé <strong><%= booking.cow.name %></strong> du <%= booking.start_date.to_formatted_s(:long) %> au <%= booking.end_date.to_formatted_s(:long) %></p>
                 </div>
               </div>
-
             </div>
             <% end %>
           </div>
         </div>
-
         <% end %>
-
 
         <% if @user.cows.empty? %>
         <div class="my_bookings text-center">
@@ -80,7 +50,6 @@
           <br>
           <%= link_to "Ajouter une vache", new_cow_path, class: "btn-add-cow" %>
         </div>
-
         <% else %>
         <div class="my_bookings text-center">
           <h2>Votre cohorte de vaches</h2>
@@ -119,13 +88,46 @@
           <br>
           <%= link_to "Ajouter une vache", new_cow_path, class: "btn-add-cow" %>
         </div>
-
-      </div>
-      <% end %>
+        <% end %>
     </div>
   </div>
 </div>
-</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+      <div id="profile-claire">
+
+        <div id="profile-picture">
+         <img id="avatar-claire" src="http://placehold.it/100x100">
+       </div>
+
+       <div id="profile-name" class="text-center">
+        <%= @user.first_name %> <%= @user.last_name %>
+        <div id="metrics">
+         <div id="metrics-cow">
+          <%= image_tag "cow_icon.png", {class: "img-circle", style: "height: 30px"} %>
+          <p><%= @user.cows.count %> cows</p>
+        </div>
+        <div id="metrics-bookings">
+          <%= image_tag "farm_icon.png", {class: "img-circle", style: "height: 30px"}  %>
+          <p><%= @user.bookings.count %> bookings</p>
+        </div>
+        <div id="description">
+          <p>
+            <%= @user.description %>
+          </p>
+        </div>
+        <div id="update-profile">
+          <%= link_to "Modifier", edit_user_path(@user), class: "link-right" %>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+
+
+
 
 
 
