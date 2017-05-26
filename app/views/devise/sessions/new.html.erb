@@ -1,8 +1,8 @@
 <div class="banner" style="background-image: linear-gradient(-125deg, rgba(5,101,168,0.5) 0%, rgba(0,36,61,0.4) 20%), url('<%= image_path("background.jpg")%>');">
   <div class="container">
     <div class="row">
-      <div class="col-sm-3 col-sm-offset-4">
-        <p class="logins">Connectez-vous au monde des amis des vaches</p>
+      <div class="col-sm-3 col-sm-offset-4 logins">
+        <p class="logins-title">Connectez-vous au monde des amis des vaches</p>
 
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-inputs input-claire">
@@ -21,4 +21,5 @@
   </div>
 
 </div>
+
 
