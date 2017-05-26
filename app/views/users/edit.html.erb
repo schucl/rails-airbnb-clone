@@ -15,6 +15,7 @@
               <div><%= f.text_field :email, class: "form-info" %></div>
               <div><%= f.label :description %></div>
               <div><%= f.text_field :description, class: "form-info" %></div>
+              <div><%= f.input :photo, as: :attachinary %></div>
             </div>
 
             <div><%= f.submit "Update", class: "form-button" %></div>
