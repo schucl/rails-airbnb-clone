@@ -1,25 +1,28 @@
-<div class="container-form" style="background-image: linear-gradient(-125deg, rgba(5,101,168,0.5) 0%, rgba(0,36,61,0.4) 20%), url('<%= image_path('background.jpg')%>');">
-  <div class="form-row">
-    <div class="col-xs-12 col-lg-4 col-lg-offset-3">
-      <div class="form-login text-center">
-        <h1>Votre nouvelle vache à louer</h1>
-        <%= simple_form_for(@cow) do |f| %>
-          <%= f.error_notification %>
+<div class="banner" style="background-image: linear-gradient(-125deg, rgba(5,101,168,0.5) 0%, rgba(0,36,61,0.4) 20%), url('<%= image_path('background.jpg')%>');">
+  <div class="container">
+    <div class="form-row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="logins">
+          <p class="logins-title">Mettre une vache en location</p>
+            <%= simple_form_for(@cow) do |f| %>
+              <%= f.error_notification %>
 
-          <div class="form-inputs">
-            <%= f.input :name, placeholder: "Your cow's name", label: false %>
-            <%= f.input :race, placeholder: "Your cow's race", label: false %>
-            <%= f.input :address, input_html: { class: "address-autocomplete" }, label: false %>
-            <%= f.input :description, placeholder: "Share a brief description about your cow", label: false %>
-            <%= f.input :photo, as: :attachinary %>
+              <div class="form-inputs input-claire">
+                <%= f.input :name, placeholder: "Your cow's name", label: false %>
+                <%= f.input :race, placeholder: "Your cow's race", label: false %>
+                <%= f.input :address, input_html: { class: "address-autocomplete" }, label: false %>
+                <%= f.input :description, placeholder: "Share a brief description about your cow", label: false %>
+                <%= f.input :photo, as: :attachinary %>
+              </div>
+
+              <div class="form-action">
+
+              <%= f.submit "Update", class: "form-button" %>
+              <%= link_to "Back", user_path(current_user), class: "back-button" %>
+              </div>
+            <% end %>
           </div>
-
-          <div><%= f.submit "Ajouter votre vache", class: "form-button" %></div>
-          <br>
-          <%= link_to "Back", user_path(current_user), class: "back-button" %>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
