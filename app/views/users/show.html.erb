@@ -4,9 +4,9 @@
       <div id="profile-claire">
 
         <div id="profile-picture avatar-claire">
-
-          <%= cl_image_tag @user.photo.path, height: 90, width: 90, crop: :thumb, gravity: :face, radius: 50 %>
-
+          <% if @user.photo.path %>
+            <%= cl_image_tag @user.photo.path, height: 90, width: 90, crop: :thumb, gravity: :face, radius: 50 %>
+          <% end %>
        </div>
 
         <div id="profile-name" class="text-center">
