@@ -2,13 +2,17 @@
 
 #profile-claire {
   height: 300px;
-  background-color: #F5F5F5;
   display:flex;
   flex-direction: column;
   flex: 1 0 auto;
   align-item: center;
   border-radius: 20px;
-  margin: 30px;
+  margin-top: 30px;
+  padding: 10px;
+  border-color: #0060BF;
+  border-radius: 20px;
+  border-width: 2px;
+  border-style: solid;
 }
 #profile-picture {
 margin: auto;
@@ -23,8 +27,9 @@ margin: auto;
 
 }
 #profile-name {
-  font-size: 18px;
-  color: #2C6284;
+  font-size: 20px;
+  color: #0060BF;
+  font-weight: bold;
   text-shadow: none;
   padding: 20px;
 
@@ -69,5 +74,5 @@ margin: auto;
 }
 .link-right {
   display: inline-block;
-  float: right;
+  float: center;
 }
