@@ -42,8 +42,22 @@
   margin-top: 30px;
   color: white;
   // font-weight: bold;
-  font-size: 24px;
+  font-size: 18px;
   margin-bottom: 20px;
+}
+
+.form-button:hover {
+  width: 100%;
+  line-height: 35px;
+  background-color: #11CBD7;
+  border-radius: 3px;
+  border-color: #11CBD7;
+  margin-top: 30px;
+  color: white;
+  // font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
+  opacity: 0.8;
 }
 
 .back-button {
@@ -53,7 +67,22 @@
 
 .back-button:hover {
   text-decoration: none;
+  color: #11CBD7;
 }
 
+.input-claire {
+  border-radius: 10px;
+}
 
-
+body {
+  font-size: 14px;
+  font-weight: light;
+}
+.logins {
+  background: rgba(255, 255, 255, 0.5);
+  padding:20px;
+}
+.logins-title p{
+  font-size: 20px;
+  font-weight: lighter;
+  }
