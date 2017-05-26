@@ -12,7 +12,7 @@
                   <h2><%= cow.name %></h2>
                     <p><%= cow.race %></p>
                 </div>
-                <%= link_to "Détail", cow_path(cow), class: 'card-link' %>
+                <%= link_to " ", cow_path(cow), class: 'card-link' %>
               </div>
             </div>
           <% end %>
@@ -20,7 +20,7 @@
       </div>
       <div class="col-xs-4">
         <div class="position-fixed">
-          <h3 class="text-center">Où paître?</h3>
+          <h3 class="text-center" style="color: #0060BF;">Où paître?</h3>
           <div id="map" style="width: 400px; height: 500px;"></div>
         </div>
       </div>
